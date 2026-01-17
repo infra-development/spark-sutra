@@ -1,0 +1,31 @@
+plugins {
+    id 'scala'
+}
+
+group = 'com.vidhyoday'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //scala
+    implementation("org.scala-lang:scala-library:$scala_version")
+    implementation("org.scala-lang.modules:scala-xml_$scala_short:$scala_xml_version")
+
+    //spark
+    implementation("org.apache.spark:spark-core_$scala_short:$spark_version")
+    implementation("org.apache.spark:spark-sql_$scala_short:$spark_version")
+    implementation("org.apache.spark:spark-mllib_$scala_short:$spark_version")
+
+    //testing
+    testImplementation "org.scalatest:scalatest_$scala_short:$scala_test_version"
+    testImplementation("org.scalatest:scalatest_$scala_short:$scala_test_version")
+    testImplementation("org.junit.jupiter:junit-jupiter:$junit_jupiter_version")
+}
+
+
+test {
+    useJUnitPlatform()
+}
